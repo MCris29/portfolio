@@ -6,7 +6,8 @@
       "@/lib/*": ["src/lib/*"],
       "@/styles/*": ["src/styles/*"],
       "@/hocs/*": ["src/hocs/*"],
-      "@/constants/*": ["src/constants/*"]
+      "@/constants/*": ["src/constants/*"],
+      "@/utils/*": ["src/utils/*"]
     },
 
     "target": "es5",
