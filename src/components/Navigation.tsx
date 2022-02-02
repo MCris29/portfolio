@@ -1,14 +1,8 @@
 import { FC } from "react";
 
 import { PaletteMode, useTheme } from "@mui/material";
-
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Switch from "@mui/material/Switch";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import { AppBar, Box, Toolbar, Typography, Switch } from "@mui/material";
+import SwitchMode from "@/components/switchMode";
 
 interface Props {
   mode: PaletteMode;
@@ -28,23 +22,10 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
         position="static"
       >
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Jon Peppinck
+            MCris
           </Typography>
-          <Switch
-            checked={mode === "dark"}
-            onChange={onChange}
-            color="secondary"
-          />
+          <SwitchMode onChange={onChange} />
         </Toolbar>
       </AppBar>
     </Box>

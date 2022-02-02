@@ -7,14 +7,7 @@ import {
   ThemeProvider,
   useTheme,
   CssBaseline,
-  Typography,
-  Badge,
-  Box,
-  Divider,
 } from '@mui/material';
-
-import MailIcon from '@mui/icons-material/Mail';
-
 import '@/styles/globals.css';
 import Navigation from '@/components/Navigation';
 
@@ -35,10 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, []);
 
-  // Update the theme only if it changes
   const theme = useMemo(() => createTheme(getThemeOptions(mode)), [mode]);
-
-  const customTheme = useTheme(); // for use in other components - could potentially use theme
 
   return (
     <ThemeProvider theme={theme}>
