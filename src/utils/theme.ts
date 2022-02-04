@@ -3,8 +3,8 @@ import { ThemeOptions } from "@mui/material/styles";
 
 const primaryPalette = {
   main: "#8C0303",
-  light: "#8C0303",
-  dark: "#400101",
+  light: "#400101",
+  dark: "#8C0303",
   contrastText: "#FFFFFF",
 };
 
@@ -46,8 +46,8 @@ const successPalette = {
 const lightThemeOptions: ThemeOptions = {
   palette: {
     background: {
-      default: "#F8F8FF",
-      paper: "#EBEDF0",
+      default: "#F8F8F8",
+      paper: "#448AA6",
     },
     text: {
       primary: "#1C1E21",
@@ -66,8 +66,8 @@ const lightThemeOptions: ThemeOptions = {
 const darkThemeOptions: ThemeOptions = {
   palette: {
     background: {
-      default: "#18191A",
-      paper: "#242526",
+      default: "#2A2A2A",
+      paper: "#024059",
     },
     text: {
       primary: "#F5F6F7",
