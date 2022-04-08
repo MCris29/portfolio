@@ -52,7 +52,7 @@
 
 //Projects page styles
 .projects {
-  padding: 40px 0;
+  padding: 0;
 }
 
 .projects .title {
@@ -63,7 +63,7 @@
 }
 
 .projects .container {
-  padding: 20px;
+  padding: 0 20px;
   display: grid;
   grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
   grid-template-rows: [y0] 1fr [y1] 1fr [y2] 1fr [y3];
@@ -77,9 +77,15 @@
   top: -100px;
   display: flex;
   justify-content: center;
+  min-height: 20px;
 
-  //sombra
+  //shadow
   box-shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.15);
+}
+
+//Contact page styles
+.contact {
+  padding: 0 40px;
 }
 
 //Responsive
