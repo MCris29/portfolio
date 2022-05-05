@@ -2,17 +2,17 @@ import { PaletteMode } from "@mui/material";
 import { ThemeOptions } from "@mui/material/styles";
 
 const primaryPalette = {
-  main: "#8C0303",
-  light: "#400101",
-  dark: "#8C0303",
-  contrastText: "#FFFFFF",
-};
-
-const secondaryPalette = {
   main: "#448AA6",
   light: "#448AA6",
   dark: "#024059",
   contrastText: "#000000",
+};
+
+const secondaryPalette = {
+  main: "#8C0303",
+  light: "#400101",
+  dark: "#8C0303",
+  contrastText: "#FFFFFF",
 };
 
 const errorPalette = {

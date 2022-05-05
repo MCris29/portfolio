@@ -1,4 +1,4 @@
-import reacr from "react";
+import react from "react";
 import styles from "@/styles/Home.module.scss";
 import { useTheme } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
