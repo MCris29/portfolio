@@ -102,6 +102,20 @@
     text-align: center;
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.item {
+  margin: 5px 0;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+
   button {
     color: white;
     text-transform: none;
@@ -113,6 +127,10 @@
       background-color: #448aa6;
     }
   }
+}
+
+.error{
+  color: #F44336;
 }
 
 //Footer

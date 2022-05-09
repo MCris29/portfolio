@@ -1,30 +1,148 @@
 import React from "react";
 import styles from "@/styles/Home.module.scss";
-import { useTheme } from "@mui/material";
-import { alpha, styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import TextField, { TextFieldProps } from "@mui/material/TextField";
+import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  name: yup
+    .string()
+    .required("Ingrese su nombre")
+    .max(100, "Su nombre debe tener maximo 100 caracteres.")
+    .matches(
+      /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
+      "El nombre solo debe contener letras"
+    ),
+  email: yup
+    .string()
+    .email("Ingrese un email válido.")
+    .required("Ingrese su email")
+    .max(100, "El email debe tener maximo 100 caracteres."),
+  subject: yup
+    .string()
+    .required("Ingrese el asunto")
+    .max(100, "El asunto debe tener maximo 100 caracteres."),
+  message: yup
+    .string()
+    .required("Ingrese su mensaje")
+    .max(255, "El mensaje debe tener maximo 255 caracteres."),
+});
 
 const Contact = () => {
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
+
+  const onSubmit = async (dataContact: any = {}) => {
+    var body =
+      "Nombre: " +
+      dataContact.name +
+      "%0A" +
+      "email: " +
+      dataContact.email +
+      "%0A" +
+      "Mensaje: " +
+      dataContact.message +
+      "%0A" +
+      " ";
+
+    window.open(
+      "mailto:crismax0629@gmail.com?subject=" +
+        dataContact.subject +
+        "&body=" +
+        body
+    );
+
+    reset({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  };
+
   return (
     <div className={styles.contact}>
       <div className={styles.form}>
         <h1>Contact</h1>
-        <Box
-          component="form"
-          noValidate
-          sx={{
-            display: "grid",
-            gap: 2,
-          }}
-        >
-          <TextField label="Name" id="name" />
-          <TextField label="Email" id="email" />
-          <TextField label="Subject" id="subject" />
-          <TextField label="Message" id="message" multiline rows={4} />
-          <Button>Send</Button>
-        </Box>
+        <form id="contact-form" noValidate onSubmit={handleSubmit(onSubmit)}>
+          <Controller
+            name="name"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Name"
+                id="name"
+                className={styles.item}
+                error={Boolean(errors.name)}
+              />
+            )}
+          />
+          <span className={styles.error}>{errors.name?.message}</span>
+
+          <Controller
+            name="email"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Email"
+                id="email"
+                className={styles.item}
+                error={Boolean(errors.email)}
+              />
+            )}
+          />
+          <span className={styles.error}>{errors.email?.message}</span>
+
+          <Controller
+            name="subject"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Subject"
+                id="subject"
+                className={styles.item}
+                error={Boolean(errors.subject)}
+              />
+            )}
+          />
+          <span className={styles.error}>{errors.subject?.message}</span>
+
+          <Controller
+            name="message"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Message"
+                id="message"
+                multiline
+                rows={4}
+                className={styles.item}
+                error={Boolean(errors.message)}
+              />
+            )}
+          />
+          <span className={styles.error}>{errors.message?.message}</span>
+
+          <div className={styles.button_container}>
+            <Button type="submit" value="submit">
+              Send
+            </Button>
+          </div>
+        </form>
       </div>
     </div>
   );
