@@ -12,14 +12,14 @@ const secondaryPalette = {
   main: "#8C0303",
   light: "#400101",
   dark: "#8C0303",
-  contrastText: "#FFFFFF",
+  contrastText: "#F8F8F8",
 };
 
 const errorPalette = {
   main: "#F44336",
   light: "#E57373",
   dark: "#D32F2F",
-  contrastText: "#FFFFFF",
+  contrastText: "#F8F8F8",
 };
 
 const warningPalette = {
@@ -33,7 +33,7 @@ const infoPalette = {
   main: "#2196f3",
   light: "#64b5f6",
   dark: "#1976d2",
-  contrastText: "#FFFFFF",
+  contrastText: "#F8F8F8",
 };
 
 const successPalette = {
