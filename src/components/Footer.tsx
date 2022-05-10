@@ -34,6 +34,7 @@ const Footer = () => {
               href={item.link}
               target="_blank"
               className={styles.icon}
+              color="inherit"
             >
               {item.icon}
             </Link>
