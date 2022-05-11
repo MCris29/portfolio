@@ -5,7 +5,7 @@ const Cover = () => {
     <div className={styles.cover}>
       <div>
         <p>Hi,</p>
-        <p>I am Cristian,</p>
+        <p>I am Cristian Mañay,</p>
         <p>Web Developer</p>
         <button>Contact me!</button>
       </div>

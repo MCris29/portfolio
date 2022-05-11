@@ -1,14 +1,14 @@
 import { FC } from "react";
 
 import { PaletteMode, useTheme } from "@mui/material";
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 import SwitchMode from "@/components/switchMode";
 
 import styles from "@/styles/Navigation.module.scss";
 import Cover from "@/components/Cover";
 
 interface Props {
-  mode: PaletteMode;
+  mode?: PaletteMode;
   onChange?: () => void;
 }
 
@@ -32,7 +32,7 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Cris
           </Typography>
-          <SwitchMode onChange={onChange} />
+          <SwitchMode mode={mode} onChange={onChange} />
         </Toolbar>
       </AppBar>
       <Cover />
