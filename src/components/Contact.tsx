@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "@/styles/Home.module.scss";
+import { styled } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+
+import { getStoredTheme } from "@/utils/theme";
 
 const schema = yup.object().shape({
   name: yup
@@ -31,6 +34,13 @@ const schema = yup.object().shape({
 });
 
 const Contact = () => {
+  const [mode, setMode] = useState("");
+
+  useEffect(() => {
+    const storedTheme = getStoredTheme();
+    setMode("" + storedTheme);
+  });
+
   const {
     handleSubmit,
     control,
@@ -66,6 +76,28 @@ const Contact = () => {
     });
   };
 
+  const CustomTextField = styled(TextField)({
+    "& label.Mui-focused": {
+      color: mode == "dark" ? "#448AA6" : "#024059",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: mode == "dark" ? "#448AA6" : "#024059",
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: mode == "dark" ? "#2A2A2A" : "#F8F8F8",
+        borderRadius: "20px",
+        boxShadow: "8px 8px 24px rgba(0, 0, 0, 0.1);",
+      },
+      "&:hover fieldset": {
+        borderColor: mode == "dark" ? "#448AA6" : "#024059",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: mode == "dark" ? "#448AA6" : "#024059",
+      },
+    },
+  });
+
   return (
     <div className={styles.contact}>
       <div className={styles.form}>
@@ -76,7 +108,7 @@ const Contact = () => {
             control={control}
             defaultValue=""
             render={({ field }) => (
-              <TextField
+              <CustomTextField
                 {...field}
                 label="Name"
                 id="name"
@@ -92,7 +124,7 @@ const Contact = () => {
             control={control}
             defaultValue=""
             render={({ field }) => (
-              <TextField
+              <CustomTextField
                 {...field}
                 label="Email"
                 id="email"
@@ -108,7 +140,7 @@ const Contact = () => {
             control={control}
             defaultValue=""
             render={({ field }) => (
-              <TextField
+              <CustomTextField
                 {...field}
                 label="Subject"
                 id="subject"
@@ -124,7 +156,7 @@ const Contact = () => {
             control={control}
             defaultValue=""
             render={({ field }) => (
-              <TextField
+              <CustomTextField
                 {...field}
                 label="Message"
                 id="message"

@@ -140,7 +140,7 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .item {
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 .button_container {
@@ -164,6 +164,9 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
 
 .error {
   color: #f44336;
+  padding-left: 15px;
+  position: relative;
+  top: -5px;
 }
 
 //Footer
