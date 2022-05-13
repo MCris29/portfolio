@@ -111,7 +111,8 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
   min-height: 10em;
 
   //shadow
-  box-shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.15);
+  // box-shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.15);
+  box-shadow: $shadow;
 }
 
 //Contact page styles
