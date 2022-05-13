@@ -1,16 +1,17 @@
 import styles from "@/styles/Home.module.scss";
 import { useTheme } from "@mui/material";
+import { Button } from "@mui/material";
 
 const About = () => {
   const customTheme = useTheme();
 
   return (
     <div className={styles.about}>
-      <div className={styles.box}>
-        <h1>About Me</h1>
+      <div>
+        <h1>About me</h1>
       </div>
       <div
-        className={styles.box}
+        className={styles.section_2}
         style={{
           backgroundColor: customTheme.palette.background.paper,
           color: customTheme.palette.text.primary,
@@ -22,6 +23,7 @@ const About = () => {
           developing web applications in Laravel and React.JS using the SCRUM
           methodology.
         </p>
+        <Button color="secondary">More...</Button>
       </div>
     </div>
   );

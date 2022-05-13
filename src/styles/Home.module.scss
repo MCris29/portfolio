@@ -1,19 +1,50 @@
+//variables
+$border_radius_button: 15px;
+$shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
+
 //About page styles
 .about {
-  height: 100vh;
+  height: 50vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+
+  h1 {
+    color: #448aa6;
+    font-size: xxx-large;
+  }
 }
 
-.about .box {
-  width: 100%;
-  padding: 40px;
+.about > div {
+  flex: 1 1 150px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 60px;
+}
+
+.about .section_2 {
+  border-radius: 20px 0 0 20px;
+  display: block;
 
   p {
     text-align: justify;
+  }
+
+  button {
+    color: white;
+    text-transform: none;
+    background-color: #8c0303;
+    justify-self: center;
+    border-radius: $border_radius_button;
+    width: 7em;
+    box-shadow: $shadow;
+
+    &:hover {
+      background-color: #400101;
+    }
   }
 }
 
@@ -122,6 +153,8 @@
     background-color: #024059;
     max-width: fit-content;
     justify-self: center;
+    border-radius: $border_radius_button;
+    box-shadow: $shadow;
 
     &:hover {
       background-color: #448aa6;
@@ -157,6 +190,10 @@
 @media only screen and (max-width: 768px) {
   .about {
     display: inline;
+  }
+
+  .about .section_2 {
+    border-radius: 0%;
   }
 
   .projects .container .card {
