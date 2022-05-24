@@ -54,11 +54,20 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .skills .title {
-  width: 100%;
-  padding: 0 40px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    font-size: xxx-large;
+    background: -webkit-linear-gradient(0deg, #f44336, #448aa6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .skills .subtitle {
+  font-size: large;
   padding-bottom: 80px;
   width: 100%;
   display: flex;
@@ -87,31 +96,34 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .projects .title {
-  height: 30vh;
   padding-top: 40px;
   display: flex;
   justify-content: center;
+
+  h1 {
+    font-size: xxx-large;
+    background: -webkit-linear-gradient(0deg, #f44336, #448aa6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .projects .container {
   padding: 0 20px;
   display: grid;
   grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
-  grid-template-rows: [y0] 1fr [y1] 1fr [y2] 1fr [y3];
+  grid-template-rows: [y0] 1fr [y1] 1fr [y2];
 }
 
 .projects .container .card {
-  position: relative;
-  margin: 5px;
+  margin: 15px;
   padding: 20px;
   border-radius: 10px;
-  top: -100px;
   display: flex;
   justify-content: center;
-  min-height: 10em;
+  min-height: 15em;
 
   //shadow
-  // box-shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.15);
   box-shadow: $shadow;
 }
 
@@ -200,8 +212,14 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
     border-radius: 0%;
   }
 
+  .projects .container {
+    display: grid;
+    grid-template-columns: [x0] 1fr;
+    grid-template-rows: [y0] 1fr;
+  }
+
   .projects .container .card {
-    margin: 2px;
+    margin: 6px;
   }
 
   .form {

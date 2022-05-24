@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "@/styles/Home.module.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useTheme } from "@mui/material";
+import { getStoredTheme } from "@/utils/theme";
 
 const responsive = {
   superLargeDesktop: {
@@ -653,8 +654,18 @@ const Skills = () => {
     },
   ];
 
+  const [mode, setMode] = useState("");
+
+  useEffect(() => {
+    const storedTheme = getStoredTheme();
+    setMode("" + storedTheme);
+  });
+
   return (
-    <div className={styles.skills}>
+    <div
+      className={styles.skills}
+      style={{ backgroundColor: mode == "dark" ? "#353535" : "#EBEBEB" }}
+    >
       <div className={styles.title}>
         <h1>My Skills</h1>
       </div>
