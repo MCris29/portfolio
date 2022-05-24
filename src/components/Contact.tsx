@@ -85,7 +85,8 @@ const Contact = () => {
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor: mode == "dark" ? "#2A2A2A" : "#F8F8F8",
+        borderColor: mode == "dark" ? "#353535" : "#F8F8F8",
+        backgroundColor: mode == "dark" ? "#353535" : "#F8F8F8",
         borderRadius: "20px",
         boxShadow: "8px 8px 24px rgba(0, 0, 0, 0.1);",
       },

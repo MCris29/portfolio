@@ -9,7 +9,7 @@ const primaryPalette = {
 };
 
 const secondaryPalette = {
-  main: "#8C0303",
+  main: "#F44336",
   light: "#400101",
   dark: "#8C0303",
   contrastText: "#F8F8F8",
