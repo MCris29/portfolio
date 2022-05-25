@@ -55,6 +55,7 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
+          <style>{"html{scroll-behavior: smooth}"}</style>
         </Head>
         <body>
           <Main />

@@ -37,14 +37,14 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
   button {
     color: white;
     text-transform: none;
-    background-color: #F44336;
+    background-color: #f44336;
     justify-self: center;
     border-radius: $border_radius_button;
     width: 9em;
     box-shadow: $shadow;
 
     &:hover {
-      background-color: #8C0303;
+      background-color: #8c0303;
     }
   }
 }

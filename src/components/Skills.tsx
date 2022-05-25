@@ -663,6 +663,7 @@ const Skills = () => {
 
   return (
     <div
+      id="skills"
       className={styles.skills}
       style={{ backgroundColor: mode == "dark" ? "#353535" : "#EBEBEB" }}
     >

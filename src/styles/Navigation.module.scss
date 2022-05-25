@@ -1,6 +1,31 @@
+$border_radius_button: 15px;
+$shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
+
 .navigation {
   background: transparent;
   box-shadow: none;
+
+  .button_1 {
+    text-transform: none;
+    justify-self: center;
+    width: 9em;
+    height: fit-content;
+  }
+
+  .button_2 {
+    color: #f8f8ff;
+    text-transform: none;
+    background-color: #f44336;
+    justify-self: center;
+    border-radius: $border_radius_button;
+    width: 9em;
+    box-shadow: $shadow;
+    height: fit-content;
+
+    &:hover {
+      background-color: #8c0303;
+    }
+  }
 }
 
 .container {

@@ -6,7 +6,7 @@ const About = () => {
   const customTheme = useTheme();
 
   return (
-    <div className={styles.about}>
+    <div className={styles.about} id="about-me">
       <div>
         <h1>About me</h1>
       </div>

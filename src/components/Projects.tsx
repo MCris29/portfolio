@@ -43,7 +43,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className={styles.projects}>
+    <div id="projects" className={styles.projects}>
       <div className={styles.title}>
         <h1>My recent work</h1>
       </div>
