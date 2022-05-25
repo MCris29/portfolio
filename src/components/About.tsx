@@ -18,12 +18,21 @@ const About = () => {
         }}
       >
         <p>
-          I am a Junior Software developer recently graduated from the EPN with
-          a taste for programming and new technologies. I have experience
-          developing web applications in Laravel and React.JS using the SCRUM
-          methodology.
+          I am a Junior Software developer graduated from the Escuela
+          Politécnica Nacional, I have a taste for programming and new
+          technologies. I have experience developing web applications in Laravel
+          and React.JS using the SCRUM methodology.
         </p>
-        <Button color="secondary">More...</Button>
+        <Button color="secondary">
+          <a
+            href={"/cv.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+            download="cv_Cristian_Mañay.pdf"
+          >
+            Download CV
+          </a>
+        </Button>
       </div>
     </div>
   );

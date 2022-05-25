@@ -31,19 +31,20 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
 
   p {
     text-align: justify;
+    font-size: large;
   }
 
   button {
     color: white;
     text-transform: none;
-    background-color: #8c0303;
+    background-color: #F44336;
     justify-self: center;
     border-radius: $border_radius_button;
-    width: 7em;
+    width: 9em;
     box-shadow: $shadow;
 
     &:hover {
-      background-color: #400101;
+      background-color: #8C0303;
     }
   }
 }
