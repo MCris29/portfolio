@@ -5,6 +5,46 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
   background: transparent;
   box-shadow: none;
 
+  .logo,
+  .logo::after {
+    border: 0;
+    outline: transparent;
+    position: relative;
+    text-transform: none;
+    justify-self: center;
+    height: fit-content;
+
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+  }
+
+  .logo::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+
+    content: "Cristian";
+    display: block;
+    position: absolute;
+    width: 9.3em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 3%,
+      #f8f8ff 3%,
+      #448aa6 5%,
+      #f44336 5%
+    );
+    text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #f8f8ff;
+    clip-path: var(--slice-0);
+  }
+
   .button_1 {
     text-transform: none;
     justify-self: center;
@@ -12,18 +52,83 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
     height: fit-content;
   }
 
-  .button_2 {
+  .button_1:hover {
+    a {
+      background: -webkit-linear-gradient(0deg, #f44336, #448aa6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: scale(1.1);
+      transition: 0.2s;
+      z-index: 1000;
+    }
+  }
+
+  .button_2,
+  .button_2::after {
+    background: linear-gradient(45deg, transparent 5%, #f44336 5%);
+    border: 0;
     color: #f8f8ff;
+    outline: transparent;
+    position: relative;
+    width: 9em;
     text-transform: none;
-    background-color: #f44336;
     justify-self: center;
     border-radius: $border_radius_button;
-    width: 9em;
     box-shadow: $shadow;
     height: fit-content;
+  }
+
+  .button_2:hover {
+    background: linear-gradient(45deg, transparent 5%, #448aa6 5%);
+    transform: scale(1.1);
+    transition: 0.2s;
+    z-index: 1000;
+  }
+
+  .button_2:hover::after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+  }
+
+  .button_2::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+
+    content: "Contact me!";
+    display: block;
+    position: absolute;
+    width: 9.3em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 3%,
+      #f8f8ff 3%,
+      #f8f8ff 5%,
+      #f44336 5%
+    );
+    text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #f8f8ff;
+    clip-path: var(--slice-0);
+  }
+
+  .button_section {
+    display: "block";
+    text-transform: none;
 
     &:hover {
-      background-color: #8c0303;
+      background: -webkit-linear-gradient(0deg, #f44336, #448aa6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      transform: scale(1.2);
+      transition: 0.2s;
+      z-index: 1000;
     }
   }
 }
@@ -64,5 +169,52 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
     text-align: center;
     display: flex;
     justify-content: center;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px 0px);
+  }
+  100% {
+    clip-path: var(--slice-3);
+    transform: translate(0);
   }
 }

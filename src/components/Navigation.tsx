@@ -135,7 +135,7 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
               textDecoration: "none",
             }}
           >
-            Cristian
+            <div className={styles.logo}>Cristian</div>
           </Typography>
 
           <Box
@@ -159,7 +159,7 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
                 textDecoration: "none",
               }}
             >
-              Cristian
+              <div className={styles.logo}>Cristian</div>
             </Typography>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -170,11 +170,10 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
             {pages.map((page, key) => (
               <Link key={key} href={page.link}>
                 <Button
+                  className={styles.button_section}
                   onClick={toggleDrawer("bottom", false)}
                   sx={{
                     color: mode == "dark" ? "#F8F8FF" : "#2A2A2A",
-                    display: "block",
-                    textTransform: "none",
                   }}
                 >
                   {page.text}
@@ -227,6 +226,9 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
             </Button>
             <Link href={"mailto:crismax0629@gmail.com"}>
               <Button className={styles.button_2}>Contact me!</Button>
+              {/* <Button className={glitch_style.glitch_effect}>
+                Contact me!
+              </Button> */}
             </Link>
           </Box>
         </Toolbar>
