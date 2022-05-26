@@ -71,9 +71,6 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
     <Box
       sx={{
         width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
-        // backgroundColor: mode == "dark" ? "#2A2A2A" : "#F8F8FF",
-        // borderTopLeftRadius: 15,
-        // borderTopRightRadius: 15,
       }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -127,22 +124,41 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
   );
 
   return (
-    <div className={styles.container}>
-      <AppBar
-        className={styles.navigation}
-        position="fixed"
-        color="transparent"
-      >
-        <Toolbar>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+    <AppBar className={styles.navigation} position="fixed" color="transparent">
+      <Toolbar>
+        <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+        <Typography
+          variant="h6"
+          noWrap
+          component="a"
+          href="/"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontWeight: 700,
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
+          <div className={styles.logo}>Cristian</div>
+        </Typography>
+
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: { xs: "flex", md: "none" },
+            alignItems: "center",
+          }}
+        >
+          <AdbIcon sx={{ mr: 1 }} />
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="a"
-            href="/"
+            href=""
             sx={{
               mr: 2,
-              display: { xs: "none", md: "flex" },
+              flexGrow: 1,
               fontWeight: 700,
               color: "inherit",
               textDecoration: "none",
@@ -150,101 +166,75 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
           >
             <div className={styles.logo}>Cristian</div>
           </Typography>
+        </Box>
+        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <SwitchMode mode={mode} onChange={onChange} />
+        </Box>
 
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", md: "none" },
-              alignItems: "center",
-            }}
-          >
-            <AdbIcon sx={{ mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                flexGrow: 1,
-                fontWeight: 700,
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              <div className={styles.logo}>Cristian</div>
-            </Typography>
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <SwitchMode mode={mode} onChange={onChange} />
-          </Box>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page, key) => (
-              <Link key={key} href={page.link}>
-                <Button
-                  className={styles.button_section}
-                  onClick={toggleDrawer("bottom", false)}
-                  sx={{
-                    color: mode == "dark" ? "#F8F8FF" : "#2A2A2A",
-                  }}
-                >
-                  {page.text}
-                </Button>
-              </Link>
-            ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={toggleDrawer("bottom", true)}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-
-            <Drawer
-              anchor={"bottom"}
-              open={state["bottom"]}
-              onClose={toggleDrawer("bottom", false)}
-            >
-              {list("bottom")}
-            </Drawer>
-          </Box>
-
-          <Box
-            sx={{
-              flexGrow: 0,
-              display: { xs: "none", md: "flex" },
-              alignItems: "center",
-            }}
-          >
-            <SwitchMode mode={mode} onChange={onChange} />
-            <Button
-              className={styles.button_1}
-              style={{ color: mode == "dark" ? "#F8F8FF" : "#2A2A2A" }}
-            >
-              <a
-                href={"/cv.pdf"}
-                target="_blank"
-                rel="noopener noreferrer"
-                download="cv_Cristian_Mañay.pdf"
+        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          {pages.map((page, key) => (
+            <Link key={key} href={page.link}>
+              <Button
+                className={styles.button_section}
+                onClick={toggleDrawer("bottom", false)}
+                sx={{
+                  color: mode == "dark" ? "#F8F8FF" : "#2A2A2A",
+                }}
               >
-                Download CV
-              </a>
-            </Button>
-            <Link href={"mailto:crismax0629@gmail.com"}>
-              <Button className={styles.button_2}>Contact me!</Button>
+                {page.text}
+              </Button>
             </Link>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <Cover mode={mode} onChange={onChange} />
-    </div>
+          ))}
+        </Box>
+
+        <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={toggleDrawer("bottom", true)}
+            color="inherit"
+          >
+            <MenuIcon />
+          </IconButton>
+
+          <Drawer
+            anchor={"bottom"}
+            open={state["bottom"]}
+            onClose={toggleDrawer("bottom", false)}
+          >
+            {list("bottom")}
+          </Drawer>
+        </Box>
+
+        <Box
+          sx={{
+            flexGrow: 0,
+            display: { xs: "none", md: "flex" },
+            alignItems: "center",
+          }}
+        >
+          <SwitchMode mode={mode} onChange={onChange} />
+          <Button
+            className={styles.button_1}
+            style={{ color: mode == "dark" ? "#F8F8FF" : "#2A2A2A" }}
+          >
+            <a
+              href={"/cv.pdf"}
+              target="_blank"
+              rel="noopener noreferrer"
+              download="cv_Cristian_Mañay.pdf"
+            >
+              Download CV
+            </a>
+          </Button>
+          <Link href={"mailto:crismax0629@gmail.com"}>
+            <Button className={styles.button_2}>Contact me!</Button>
+          </Link>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 };
 

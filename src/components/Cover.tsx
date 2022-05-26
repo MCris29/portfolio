@@ -1,13 +1,15 @@
-import { FC } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "@/styles/Navigation.module.scss";
-import { useTheme, PaletteMode } from "@mui/material";
+import { getStoredTheme } from "@/utils/theme";
 
-interface Props {
-  mode?: PaletteMode;
-  onChange?: () => void;
-}
+const Cover = () => {
+  const [mode, setMode] = useState("");
 
-const Cover: FC<Props> = ({ mode }) => {
+  useEffect(() => {
+    const storedTheme = getStoredTheme();
+    setMode("" + storedTheme);
+  });
+
   return (
     <div className={styles.cover}>
       <div style={{ color: mode == "dark" ? "#F8F8FF" : "#2A2A2A" }}>

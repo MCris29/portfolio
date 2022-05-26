@@ -61,7 +61,7 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
 
   h1 {
     font-size: xxx-large;
-    background: -webkit-linear-gradient(0deg, #f44336, #448aa6);
+    background: -webkit-linear-gradient(45deg, #f44336, #448aa6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -103,7 +103,7 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
 
   h1 {
     font-size: xxx-large;
-    background: -webkit-linear-gradient(0deg, #f44336, #448aa6);
+    background: -webkit-linear-gradient(45deg, #f44336, #448aa6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -113,7 +113,6 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
   padding: 0 20px;
   display: grid;
   grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
-  grid-template-rows: [y0] 1fr [y1] 1fr [y2];
 }
 
 .projects .container .card {
@@ -122,7 +121,9 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   display: flex;
   justify-content: center;
-  min-height: 15em;
+  // min-height: 15em;
+  // max-width: 15em;
+  // max-height: 15em;
 
   //shadow
   box-shadow: $shadow;

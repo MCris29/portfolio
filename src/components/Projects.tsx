@@ -1,44 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "@/styles/Home.module.scss";
 import CardProject from "./CardProject";
+import { getStoredTheme } from "@/utils/theme";
 
 const Projects = () => {
+  const [mode, setMode] = useState("");
+
+  useEffect(() => {
+    const storedTheme = getStoredTheme();
+    setMode("" + storedTheme);
+  });
+
   const projects = [
     {
-      title: " 1",
-      description: "Proyecto",
-      link: "123",
-      background: "#353535",
-    },
-    {
-      title: " 2",
-      description: "Proyecto",
-      link: "123",
-      background: "#353535",
-    },
-    {
-      title: " 3",
-      description: "Proyecto",
-      link: "123",
-      background: "#353535",
-    },
-    {
-      title: " 1",
-      description: "Proyecto",
-      link: "123",
-      background: "#353535",
-    },
-    {
-      title: " 2",
-      description: "Proyecto",
-      link: "123",
-      background: "#353535",
-    },
-    {
-      title: " 3",
-      description: "Proyecto",
-      link: "123",
-      background: "#353535",
+      title: " FUHPED",
+      description: "",
+      image: "/projects/fuhped_page.png",
+      link: "https://fuhped.vercel.app/",
+      logo: "/projects/fuhped_logo1.png",
+      background: "linear-gradient(45deg, #855e96, #f44336)",
     },
   ];
 
