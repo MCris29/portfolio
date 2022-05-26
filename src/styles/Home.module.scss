@@ -44,7 +44,7 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
     box-shadow: $shadow;
 
     &:hover {
-      background-color: #8c0303;
+      background-color: #448aa6;
     }
   }
 }
@@ -236,7 +236,6 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 }
-
 
 @keyframes glitch {
   0% {

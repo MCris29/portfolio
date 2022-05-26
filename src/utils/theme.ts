@@ -47,7 +47,7 @@ const lightThemeOptions: ThemeOptions = {
   palette: {
     background: {
       default: "#F8F8FF",
-      paper: "#448AA6",
+      paper: "#F8F8FF",
     },
     text: {
       primary: "#1C1E21",
@@ -67,7 +67,7 @@ const darkThemeOptions: ThemeOptions = {
   palette: {
     background: {
       default: "#2A2A2A",
-      paper: "#024059",
+      paper: "#2A2A2A",
     },
     text: {
       primary: "#F5F6F7",

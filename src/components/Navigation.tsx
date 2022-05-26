@@ -1,24 +1,28 @@
 import react, { FC, useState } from "react";
 import Link from "next/link";
-
-import { Divider, PaletteMode, useTheme } from "@mui/material";
-import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
-import SwitchMode from "@/components/switchMode";
-import AdbIcon from "@mui/icons-material/Adb";
-
 import styles from "@/styles/Navigation.module.scss";
+import SwitchMode from "@/components/switchMode";
 import Cover from "@/components/Cover";
+import {
+  useTheme,
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  Divider,
+  PaletteMode,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 
+import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
-
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import WorkOutlinedIcon from "@mui/icons-material/WorkOutlined";
 import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
@@ -65,7 +69,12 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{
+        width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+        // backgroundColor: mode == "dark" ? "#2A2A2A" : "#F8F8FF",
+        // borderTopLeftRadius: 15,
+        // borderTopRightRadius: 15,
+      }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -75,7 +84,13 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
           <ListItem key={key} disablePadding>
             <Link href={item.link}>
               <ListItemButton>
-                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemIcon
+                  style={{
+                    color: mode == "dark" ? "#F8F8FF" : "#2A2A2A",
+                  }}
+                >
+                  {item.icon}
+                </ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItemButton>
             </Link>
@@ -86,7 +101,11 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
 
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>
+            <ListItemIcon
+              style={{
+                color: mode == "dark" ? "#F8F8FF" : "#2A2A2A",
+              }}
+            >
               <DownloadForOfflineOutlinedIcon />
             </ListItemIcon>
             <ListItemText
@@ -108,13 +127,7 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
   );
 
   return (
-    <div
-      className={styles.container}
-      style={{
-        backgroundColor: customTheme.palette.background.paper,
-        color: customTheme.palette.text.primary,
-      }}
-    >
+    <div className={styles.container}>
       <AppBar
         className={styles.navigation}
         position="fixed"
@@ -226,14 +239,11 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
             </Button>
             <Link href={"mailto:crismax0629@gmail.com"}>
               <Button className={styles.button_2}>Contact me!</Button>
-              {/* <Button className={glitch_style.glitch_effect}>
-                Contact me!
-              </Button> */}
             </Link>
           </Box>
         </Toolbar>
       </AppBar>
-      <Cover />
+      <Cover mode={mode} onChange={onChange} />
     </div>
   );
 };

@@ -1,9 +1,18 @@
+import react, { useState, useEffect } from "react";
 import styles from "@/styles/Home.module.scss";
 import { useTheme } from "@mui/material";
 import { Button } from "@mui/material";
+import { getStoredTheme } from "@/utils/theme";
 
 const About = () => {
   const customTheme = useTheme();
+
+  const [mode, setMode] = useState("");
+
+  useEffect(() => {
+    const storedTheme = getStoredTheme();
+    setMode("" + storedTheme);
+  });
 
   return (
     <div className={styles.about} id="about-me">
@@ -13,7 +22,7 @@ const About = () => {
       <div
         className={styles.section_2}
         style={{
-          backgroundColor: customTheme.palette.background.paper,
+          backgroundColor: mode == "dark" ? "#024059" : "#448AA6",
           color: customTheme.palette.text.primary,
         }}
       >
