@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/Home.module.scss";
 import CardProject from "./CardProject";
-import { getStoredTheme } from "@/utils/theme";
 
 const Projects = () => {
-  const [mode, setMode] = useState("");
-
-  useEffect(() => {
-    const storedTheme = getStoredTheme();
-    setMode("" + storedTheme);
-  });
-
   const projects = [
     {
       title: " FUHPED",
