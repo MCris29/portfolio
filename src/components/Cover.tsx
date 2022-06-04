@@ -12,10 +12,13 @@ const Cover = () => {
 
   return (
     <div className={styles.cover}>
+      <video autoPlay muted loop>
+        <source src="/cover.mp4" type="video/mp4" />
+      </video>
       <div style={{ color: mode == "dark" ? "#F8F8FF" : "#2A2A2A" }}>
-        <p>Hi,</p>
-        <p>I am Cristian,</p>
-        <p>Software Developer</p>
+        <p className={styles.p_1}>Hi,</p>
+        <p className={styles.p_2}>I am Cristian,</p>
+        <p className={styles.p_3}>Software Developer</p>
       </div>
     </div>
   );

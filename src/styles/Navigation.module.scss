@@ -142,8 +142,26 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
 
+  //for video
+  position: relative;
+  overflow: hidden;
+
   p {
-    margin: 0;
+    position: relative;
+    text-shadow: $shadow;
+  }
+
+  .p_1 {
+    font-size: 3rem;
+    margin: -12px 0;
+  }
+  .p_2 {
+    font-size: 4rem;
+    margin: -25px 0;
+  }
+  .p_3 {
+    font-size: 8rem;
+    margin: -50px 0;
   }
 
   button {
@@ -153,6 +171,15 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     padding: 10px 20px;
     font-size: 20px;
+  }
+
+  video {
+    position: absolute;
+    top: -2em;
+    left: -4em;
+    min-width: 100vh;
+    filter: blur(3px);
+    opacity: 0.6;
   }
 }
 
@@ -164,6 +191,23 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
     text-align: center;
     display: flex;
     justify-content: center;
+
+    .p_1 {
+      font-size: unset;
+      margin: 0;
+    }
+    .p_2 {
+      font-size: unset;
+      margin: 0;
+    }
+    .p_3 {
+      font-size: unset;
+      margin: 0;
+    }
+
+    video {
+      left: -22em;
+    }
   }
 }
 
