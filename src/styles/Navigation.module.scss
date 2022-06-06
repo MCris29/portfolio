@@ -183,8 +183,8 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
+/* Medium devices (landscape tablets, 900px and up) */
+@media only screen and (max-width: 900px) {
   .cover {
     width: 100%;
     font-size: 40px;
