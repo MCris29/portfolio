@@ -54,6 +54,7 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
     &:hover {
       background: -webkit-linear-gradient(0deg, #f44336, #448aa6);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
 
       transform: scale(1.1);
@@ -123,6 +124,7 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
     &:hover {
       background: -webkit-linear-gradient(0deg, #f44336, #448aa6);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
 
       transform: scale(1.2);
