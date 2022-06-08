@@ -22,12 +22,12 @@ const Projects = () => {
   }, []);
 
   const initAnimation = () => {
-    gsap.set(".cardProjects", {
-      scale: 0,
-    });
-
     gsap.set("#title_projects", {
       opacity: 0,
+    });
+
+    gsap.set(".cardProjects", {
+      scale: 0,
     });
 
     const cardTl = gsap.timeline({

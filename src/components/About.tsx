@@ -3,6 +3,7 @@ import styles from "@/styles/Home.module.scss";
 import { useTheme } from "@mui/material";
 import { Button } from "@mui/material";
 import { getStoredTheme } from "@/utils/theme";
+import AboutAnimation from "@/components/AboutAnimation";
 
 const About = () => {
   const customTheme = useTheme();
@@ -16,10 +17,11 @@ const About = () => {
 
   return (
     <div className={styles.about} id="about-me">
-      <div>
+      <div id="title_about">
         <h1>About me</h1>
       </div>
       <div
+        id="section_2"
         className={styles.section_2}
         style={{
           backgroundColor: mode == "dark" ? "#024059" : "#448AA6",
@@ -32,7 +34,7 @@ const About = () => {
           technologies. I have experience developing web applications in Laravel
           and React.JS using the SCRUM methodology.
         </p>
-        <Button color="secondary">
+        <Button color="secondary" id="button_about">
           <a
             href={"/cv.pdf"}
             target="_blank"
@@ -43,6 +45,7 @@ const About = () => {
           </a>
         </Button>
       </div>
+      <AboutAnimation />
     </div>
   );
 };
