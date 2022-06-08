@@ -4,6 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useTheme } from "@mui/material";
 import { getStoredTheme } from "@/utils/theme";
+import SkillsAnimation from "@/components/SkillsAnimation";
 
 const responsive = {
   superLargeDesktop: {
@@ -667,7 +668,7 @@ const Skills = () => {
       className={styles.skills}
       style={{ backgroundColor: mode == "dark" ? "#353535" : "#EBEBEB" }}
     >
-      <div className={styles.title}>
+      <div className={styles.title} id="title_skills">
         <h1>My Skills</h1>
       </div>
       <div className={styles.box}>
@@ -682,7 +683,7 @@ const Skills = () => {
           {skills_frontend.map((item, key) => {
             return (
               <div key={key} className={styles.item}>
-                {item.logo}
+                <div className="skills_frontend">{item.logo}</div>
               </div>
             );
           })}
@@ -699,7 +700,7 @@ const Skills = () => {
           {skills_backend.map((item, key) => {
             return (
               <div key={key} className={styles.item}>
-                {item.logo}
+                <div className="skills_backend">{item.logo}</div>
               </div>
             );
           })}
@@ -718,13 +719,14 @@ const Skills = () => {
           {other_skills.map((item, key) => {
             return (
               <div key={key} className={styles.item}>
-                {item.logo}
+                <div className="skills_dev_tools">{item.logo}</div>
               </div>
             );
           })}
         </Carousel>
       </div>
       <div className={styles.subtitle}>Other Dev Tools</div>
+      <SkillsAnimation />
     </div>
   );
 };
