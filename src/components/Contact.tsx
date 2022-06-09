@@ -31,7 +31,6 @@ const schema = yup.object().shape({
 });
 
 const AnimateButton = () => {
-  console.log("Botón animado");
   document.querySelectorAll("#contact_button").forEach((button) => {
     let getVar = (variable: any) =>
       getComputedStyle(button).getPropertyValue(variable);
@@ -162,6 +161,7 @@ const AnimateButton = () => {
 
 const Contact = () => {
   const [mode, setMode] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const storedTheme = getStoredTheme();
@@ -176,6 +176,8 @@ const Contact = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = async (dataContact: any = {}) => {
+    setLoading(true);
+
     const contactData = {
       name: dataContact.name,
       email: dataContact.email,
@@ -190,6 +192,8 @@ const Contact = () => {
     try {
       const contactData = await Contacts.send(formData);
       AnimateButton();
+      setLoading(false);
+
       reset({
         name: "",
         email: "",
@@ -197,6 +201,7 @@ const Contact = () => {
       });
     } catch (e) {
       console.log("error", e);
+      setLoading(false);
     }
   };
 
@@ -208,6 +213,7 @@ const Contact = () => {
       borderBottomColor: mode == "dark" ? "#448AA6" : "#024059",
     },
     "& .MuiOutlinedInput-root": {
+      margin: "0 0 20px 0",
       backgroundColor: mode == "dark" ? "#353535" : "#F8F8F8",
       borderRadius: "20px",
 
@@ -283,7 +289,11 @@ const Contact = () => {
           <span className={styles.error}>{errors.message?.message}</span>
 
           <div className={styles.button_container}>
-            <button id="contact_button" className={styles.button_contact}>
+            <button
+              id="contact_button"
+              className={styles.button_contact}
+              disabled={loading}
+            >
               <span className={styles.default}>Send</span>
               <span className={styles.success}>
                 <svg viewBox="0 0 16 16">
