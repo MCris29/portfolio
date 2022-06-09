@@ -24,6 +24,7 @@ const Projects = () => {
   const initAnimation = () => {
     gsap.set("#title_projects", {
       opacity: 0,
+      y: 50,
     });
 
     gsap.set(".cardProjects", {
@@ -40,6 +41,7 @@ const Projects = () => {
 
     cardTl.to("#title_projects", {
       opacity: 1,
+      y: 0,
     });
 
     cardTl.to(".cardProjects", {

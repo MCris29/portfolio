@@ -2,46 +2,46 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const AboutAnimation = () => {
+const ContactAnimation = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     initAnimation();
   }, []);
 
   const initAnimation = () => {
-    gsap.set("#title_about", {
+    gsap.set("#title_contact", {
       opacity: 0,
       y: 50,
     });
 
-    gsap.set("#section_2", {
+    gsap.set("#contact-form", {
       opacity: 0,
       y: 50,
     });
 
-    gsap.set("#button_about", {
+    gsap.set("#contact_button", {
       scale: 0,
     });
 
     const itemFrontendTl = gsap.timeline({
       scrollTrigger: {
-        trigger: "#about-me",
+        trigger: "#contact-me",
         start: () => "top center",
         end: () => `+=${window.innerHeight}`,
       },
     });
 
-    itemFrontendTl.to("#title_about", {
+    itemFrontendTl.to("#title_contact", {
       opacity: 1,
       y: 0,
     });
 
-    itemFrontendTl.to("#section_2", {
+    itemFrontendTl.to("#contact-form", {
       opacity: 1,
       y: 0,
     });
 
-    itemFrontendTl.to("#button_about", {
+    itemFrontendTl.to("#contact_button", {
       scale: 1,
       ease: "bounce",
     });
@@ -50,4 +50,4 @@ const AboutAnimation = () => {
   return <></>;
 };
 
-export default AboutAnimation;
+export default ContactAnimation;

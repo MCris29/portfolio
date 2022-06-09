@@ -2,15 +2,13 @@ import React, { useEffect, useState } from "react";
 import styles from "@/styles/Home.module.scss";
 import { styled } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
-import { Button } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import gsap from "gsap";
-
 import { Contacts } from "@/lib/contact";
-
+import gsap from "gsap";
 import { getStoredTheme } from "@/utils/theme";
+import ContactAnimation from "@/components/ContactAnimation";
 
 const schema = yup.object().shape({
   name: yup
@@ -32,8 +30,9 @@ const schema = yup.object().shape({
     .max(255, "The message must have a maximum of 255 characters."),
 });
 
-function handleButton() {
-  document.querySelectorAll(".Home_button_contact__ejwIW").forEach((button) => {
+const AnimateButton = () => {
+  console.log("Botón animado");
+  document.querySelectorAll("#contact_button").forEach((button) => {
     let getVar = (variable: any) =>
       getComputedStyle(button).getPropertyValue(variable);
 
@@ -159,7 +158,7 @@ function handleButton() {
       ],
     });
   });
-}
+};
 
 const Contact = () => {
   const [mode, setMode] = useState("");
@@ -190,7 +189,7 @@ const Contact = () => {
 
     try {
       const contactData = await Contacts.send(formData);
-      handleButton();
+      AnimateButton();
       reset({
         name: "",
         email: "",
@@ -229,7 +228,7 @@ const Contact = () => {
   return (
     <div id="contact-me" className={styles.contact}>
       <div className={styles.form}>
-        <div className={styles.title}>
+        <div className={styles.title} id="title_contact">
           <h1>Contact</h1>
         </div>
         <form id="contact-form" noValidate onSubmit={handleSubmit(onSubmit)}>
@@ -284,7 +283,7 @@ const Contact = () => {
           <span className={styles.error}>{errors.message?.message}</span>
 
           <div className={styles.button_container}>
-            <button className={styles.button_contact}>
+            <button id="contact_button" className={styles.button_contact}>
               <span className={styles.default}>Send</span>
               <span className={styles.success}>
                 <svg viewBox="0 0 16 16">
@@ -304,6 +303,7 @@ const Contact = () => {
           </div>
         </form>
       </div>
+      <ContactAnimation />
     </div>
   );
 };

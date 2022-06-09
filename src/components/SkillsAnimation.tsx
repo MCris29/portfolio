@@ -19,6 +19,7 @@ const SkillsAnimation = () => {
   const initAnimation = () => {
     gsap.set("#title_skills", {
       opacity: 0,
+      y: 50,
     });
 
     gsap.set(".Home_subtitle__Fb0Fc", {
@@ -47,6 +48,7 @@ const SkillsAnimation = () => {
 
     itemFrontendTl.to("#title_skills", {
       opacity: 1,
+      y: 0,
     });
 
     itemFrontendTl.to(".Home_subtitle__Fb0Fc", {
