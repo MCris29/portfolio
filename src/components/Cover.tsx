@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/Navigation.module.scss";
+import CoverAnimation from "@/components/CoverAnimation";
 import { getStoredTheme } from "@/utils/theme";
 
 const Cover = () => {
@@ -11,15 +12,19 @@ const Cover = () => {
   });
 
   return (
-    <div className={styles.cover}>
+    <div id="cover" className={styles.cover}>
       <video autoPlay muted loop>
         <source src="/cover.mp4" type="video/mp4" />
       </video>
-      <div style={{ color: mode == "dark" ? "#F8F8FF" : "#2A2A2A" }}>
+      <div
+        id="title_cover"
+        style={{ color: mode == "dark" ? "#F8F8FF" : "#2A2A2A" }}
+      >
         <p className={styles.p_1}>Hi,</p>
         <p className={styles.p_2}>I am Cristian,</p>
         <p className={styles.p_3}>Software Developer</p>
       </div>
+      <CoverAnimation />
     </div>
   );
 };
