@@ -3,7 +3,6 @@ import Link from "next/link";
 import styles from "@/styles/Navigation.module.scss";
 import SwitchMode from "@/components/switchMode";
 import {
-  useTheme,
   AppBar,
   Toolbar,
   Typography,
@@ -19,7 +18,6 @@ import {
   ListItemText,
   useScrollTrigger,
 } from "@mui/material";
-import CodeIcon from "@mui/icons-material/Code";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
@@ -45,8 +43,6 @@ const pages = [
 ];
 
 const Navigation: FC<Props> = ({ mode, onChange }) => {
-  const customTheme = useTheme();
-
   const [state, setState] = useState({
     top: false,
     left: false,
@@ -158,7 +154,6 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
           color="transparent"
         >
           <Toolbar id="item_navigation">
-            <CodeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
             <Typography
               variant="h6"
               noWrap
@@ -182,7 +177,6 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
                 alignItems: "center",
               }}
             >
-              <CodeIcon sx={{ mr: 1 }} />
               <Typography
                 variant="h5"
                 noWrap
