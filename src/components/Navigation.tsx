@@ -23,10 +23,10 @@ import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import WorkOutlinedIcon from "@mui/icons-material/WorkOutlined";
-import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
+import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import BuildOutlinedIcon from "@mui/icons-material/BuildOutlined";
 import DownloadForOfflineOutlinedIcon from "@mui/icons-material/DownloadForOfflineOutlined";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 import PropTypes from "prop-types";
 
@@ -40,8 +40,8 @@ type Anchor = "top" | "left" | "bottom" | "right";
 const pages = [
   { text: "About", icon: <InfoOutlinedIcon />, link: "/#about-me" },
   { text: "Skills", icon: <BuildOutlinedIcon />, link: "/#skills" },
-  { text: "Work", icon: <WorkOutlinedIcon />, link: "/#projects" },
-  { text: "Contact", icon: <ContactPageOutlinedIcon />, link: "/#contact-me" },
+  { text: "Work", icon: <WorkOutlineIcon />, link: "/#projects" },
+  { text: "Contact", icon: <MailOutlineIcon />, link: "/#contact-me" },
 ];
 
 const Navigation: FC<Props> = ({ mode, onChange }) => {
@@ -150,14 +150,14 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
   }
 
   return (
-    <div>
+    <div id="navigation">
       <ElevationScroll>
         <AppBar
           className={styles.navigation}
           position="fixed"
           color="transparent"
         >
-          <Toolbar>
+          <Toolbar id="item_navigation">
             <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
             <Typography
               variant="h6"
@@ -207,6 +207,7 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
               {pages.map((page, key) => (
                 <Link key={key} href={page.link}>
                   <Button
+                    id="link_page"
                     className={styles.button_section}
                     onClick={toggleDrawer("bottom", false)}
                     sx={{

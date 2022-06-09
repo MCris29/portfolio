@@ -9,6 +9,10 @@ const CoverAnimation = () => {
   }, []);
 
   const initAnimation = () => {
+    gsap.set("#navigation", {
+      opacity: 0,
+    });
+
     gsap.set("#title_cover", {
       opacity: 0,
       y: 50,
@@ -16,10 +20,15 @@ const CoverAnimation = () => {
 
     const itemFrontendTl = gsap.timeline({
       scrollTrigger: {
-        trigger: "#cover",
+        trigger: "#navigation",
         start: () => "top center",
         end: () => `+=${window.innerHeight}`,
       },
+    });
+
+    itemFrontendTl.to("#navigation", {
+      opacity: 1,
+      ease: "linear",
     });
 
     itemFrontendTl.to("#title_cover", {
