@@ -19,7 +19,7 @@ import {
   ListItemText,
   useScrollTrigger,
 } from "@mui/material";
-import AdbIcon from "@mui/icons-material/Adb";
+import CodeIcon from "@mui/icons-material/Code";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
@@ -158,7 +158,7 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
           color="transparent"
         >
           <Toolbar id="item_navigation">
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <CodeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
             <Typography
               variant="h6"
               noWrap
@@ -172,7 +172,7 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
                 textDecoration: "none",
               }}
             >
-              <div className={styles.logo}>Cristian</div>
+              <div className={styles.logo}>M. Cristian</div>
             </Typography>
 
             <Box
@@ -182,7 +182,7 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
                 alignItems: "center",
               }}
             >
-              <AdbIcon sx={{ mr: 1 }} />
+              <CodeIcon sx={{ mr: 1 }} />
               <Typography
                 variant="h5"
                 noWrap
@@ -196,7 +196,7 @@ const Navigation: FC<Props> = ({ mode, onChange }) => {
                   textDecoration: "none",
                 }}
               >
-                <div className={styles.logo}>Cristian</div>
+                <div className={styles.logo}>M. Cristian</div>
               </Typography>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
