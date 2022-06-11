@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "@/styles/Home.module.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Tooltip from "@mui/material/Tooltip";
 import { useTheme } from "@mui/material";
 import { getStoredTheme } from "@/utils/theme";
 import SkillsAnimation from "@/components/SkillsAnimation";
@@ -256,7 +257,7 @@ const Skills = () => {
 
   const skills_backend = [
     {
-      title: "Php My Admin",
+      title: "Php MyAdmin",
       logo: (
         <svg
           className={styles.logo}
@@ -683,7 +684,9 @@ const Skills = () => {
           {skills_frontend.map((item, key) => {
             return (
               <div key={key} className={styles.item}>
-                <div className="skills_frontend">{item.logo}</div>
+                <Tooltip title={item.title} placement="top">
+                  <div className="skills_frontend">{item.logo}</div>
+                </Tooltip>
               </div>
             );
           })}
@@ -695,12 +698,16 @@ const Skills = () => {
           ssr={true}
           arrows={false}
           infinite={true}
+          autoPlay={true}
+          autoPlaySpeed={2000}
           responsive={responsive}
         >
           {skills_backend.map((item, key) => {
             return (
               <div key={key} className={styles.item}>
-                <div className="skills_backend">{item.logo}</div>
+                <Tooltip title={item.title} placement="top">
+                  <div className="skills_backend">{item.logo}</div>
+                </Tooltip>
               </div>
             );
           })}
@@ -714,12 +721,14 @@ const Skills = () => {
           infinite={true}
           responsive={responsive}
           autoPlay={true}
-          autoPlaySpeed={1500}
+          autoPlaySpeed={2500}
         >
           {other_skills.map((item, key) => {
             return (
               <div key={key} className={styles.item}>
-                <div className="skills_dev_tools">{item.logo}</div>
+                <Tooltip title={item.title} placement="top">
+                  <div className="skills_dev_tools">{item.logo}</div>
+                </Tooltip>
               </div>
             );
           })}
