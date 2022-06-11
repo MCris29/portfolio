@@ -148,7 +148,7 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
   }
 }
 
-.form {
+.contact_form {
   margin: 40px;
   min-width: 42rem;
 
@@ -169,6 +169,19 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
   form {
     display: flex;
     flex-direction: column;
+
+    .item {
+      border-radius: $border_radius_button;
+      box-shadow: $shadow;
+    }
+
+    div {
+      border-radius: $border_radius_button;
+    }
+
+    fieldset {
+      border-radius: $border_radius_button;
+    }
   }
 }
 
@@ -182,6 +195,7 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
   padding-left: 15px;
   position: relative;
   top: -5px;
+  margin: 10px 0 20px;
 }
 
 //Button animated
@@ -421,6 +435,10 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
 
   .about .section_2 {
     border-radius: 0%;
+  }
+
+  .contact_form {
+    min-width: 20rem;
   }
 
   .form {

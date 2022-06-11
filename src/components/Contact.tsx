@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/Home.module.scss";
-import { styled } from "@mui/material/styles";
-import TextField from "@mui/material/TextField";
+import { TextField } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -169,8 +168,8 @@ const Contact = () => {
   });
 
   const {
-    handleSubmit,
     control,
+    handleSubmit,
     reset,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
@@ -192,7 +191,6 @@ const Contact = () => {
     try {
       const contactData = await Contacts.send(formData);
       AnimateButton();
-      setLoading(false);
 
       reset({
         name: "",
@@ -201,53 +199,37 @@ const Contact = () => {
       });
     } catch (e) {
       console.log("error", e);
-      setLoading(false);
     }
+
+    setLoading(false);
   };
-
-  const CustomTextField = styled(TextField)({
-    "& label.Mui-focused": {
-      color: mode == "dark" ? "#448AA6" : "#024059",
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: mode == "dark" ? "#448AA6" : "#024059",
-    },
-    "& .MuiOutlinedInput-root": {
-      margin: "0 0 20px 0",
-      backgroundColor: mode == "dark" ? "#353535" : "#F8F8F8",
-      borderRadius: "20px",
-
-      "& fieldset": {
-        borderColor: mode == "dark" ? "#2A2A2A" : "#F8F8FF",
-        borderRadius: "20px",
-        boxShadow: "8px 8px 24px rgba(0, 0, 0, 0.1);",
-      },
-      "&:hover fieldset": {
-        borderColor: mode == "dark" ? "#448AA6" : "#024059",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: mode == "dark" ? "#448AA6" : "#024059",
-      },
-    },
-  });
 
   return (
     <div id="contact-me" className={styles.contact}>
-      <div className={styles.form}>
+      <div className={styles.contact_form}>
         <div className={styles.title} id="title_contact">
           <h1>Contact</h1>
         </div>
-        <form id="contact-form" noValidate onSubmit={handleSubmit(onSubmit)}>
+        <form
+          id="contact-form"
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+          autoComplete="off"
+        >
           <Controller
             name="name"
             control={control}
             defaultValue=""
+            rules={{ required: true }}
             render={({ field }) => (
-              <CustomTextField
+              <TextField
                 {...field}
-                label="Name"
                 id="name"
+                label="Name"
                 className={styles.item}
+                style={{
+                  backgroundColor: mode == "dark" ? "#353535" : "#F8F8F8",
+                }}
                 error={Boolean(errors.name)}
               />
             )}
@@ -259,11 +241,14 @@ const Contact = () => {
             control={control}
             defaultValue=""
             render={({ field }) => (
-              <CustomTextField
+              <TextField
                 {...field}
-                label="Email"
                 id="email"
+                label="Email"
                 className={styles.item}
+                style={{
+                  backgroundColor: mode == "dark" ? "#353535" : "#F8F8F8",
+                }}
                 error={Boolean(errors.email)}
               />
             )}
@@ -275,13 +260,16 @@ const Contact = () => {
             control={control}
             defaultValue=""
             render={({ field }) => (
-              <CustomTextField
+              <TextField
                 {...field}
-                label="Message"
                 id="message"
+                label="Message"
                 multiline
                 rows={4}
                 className={styles.item}
+                style={{
+                  backgroundColor: mode == "dark" ? "#353535" : "#F8F8F8",
+                }}
                 error={Boolean(errors.message)}
               />
             )}
