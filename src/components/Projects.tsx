@@ -8,7 +8,8 @@ const Projects = () => {
   const projects = [
     {
       title: " FUHPED",
-      description: "",
+      description: "A web application for managing foundation memberships.",
+      tools: "Laravel, NextJs, ReactJs, MaterialUI.",
       image: "/projects/fuhped_page.png",
       link: "https://fuhped.vercel.app/",
       logo: "/projects/fuhped_logo1.png",

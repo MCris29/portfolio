@@ -159,7 +159,7 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
     h1 {
       font-size: xxx-large;
       text-align: center;
-      background: -webkit-linear-gradient(45deg, #f44336, #448aa6);
+      background: -webkit-linear-gradient(45deg, #448aa6, #024059);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -407,6 +407,11 @@ $shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
   &:hover {
     color: #448aa6;
   }
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
 }
 
 //Responsive
