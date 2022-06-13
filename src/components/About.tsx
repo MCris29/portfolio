@@ -24,15 +24,14 @@ const About = () => {
         id="section_2"
         className={styles.section_2}
         style={{
-          backgroundColor: mode == "dark" ? "#024059" : "#448AA6",
+          backgroundColor: mode == "light" ? "#448AA6" : "#024059",
           color: customTheme.palette.text.primary,
         }}
       >
         <p>
           I am a Junior Software developer graduated from the Escuela
           Politécnica Nacional, I have a taste for programming and new
-          technologies. I have experience developing web applications in Laravel
-          and React.JS using the SCRUM methodology.
+          technologies. I have experience developing web applications using the SCRUM methodology.
         </p>
         <Button color="secondary" id="button_about">
           <a

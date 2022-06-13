@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "@/styles/Home.module.scss";
 import { TextField } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
@@ -6,7 +6,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Contacts } from "@/lib/contact";
 import gsap from "gsap";
-import { getStoredTheme } from "@/utils/theme";
 import ContactAnimation from "@/components/ContactAnimation";
 
 const schema = yup.object().shape({
@@ -159,13 +158,7 @@ const AnimateButton = () => {
 };
 
 const Contact = () => {
-  const [mode, setMode] = useState("");
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const storedTheme = getStoredTheme();
-    setMode("" + storedTheme);
-  });
 
   const {
     control,
@@ -227,9 +220,6 @@ const Contact = () => {
                 id="name"
                 label="Name"
                 className={styles.item}
-                style={{
-                  backgroundColor: mode == "dark" ? "#353535" : "#F8F8F8",
-                }}
                 error={Boolean(errors.name)}
               />
             )}
@@ -246,9 +236,6 @@ const Contact = () => {
                 id="email"
                 label="Email"
                 className={styles.item}
-                style={{
-                  backgroundColor: mode == "dark" ? "#353535" : "#F8F8F8",
-                }}
                 error={Boolean(errors.email)}
               />
             )}
@@ -267,9 +254,6 @@ const Contact = () => {
                 multiline
                 rows={4}
                 className={styles.item}
-                style={{
-                  backgroundColor: mode == "dark" ? "#353535" : "#F8F8F8",
-                }}
                 error={Boolean(errors.message)}
               />
             )}
