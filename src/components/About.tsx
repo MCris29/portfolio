@@ -29,9 +29,12 @@ const About = () => {
         }}
       >
         <p>
-          I am a Junior Software developer graduated from the Escuela
-          Politécnica Nacional, I have a taste for programming and new
-          technologies. I have experience developing web applications using the SCRUM methodology.
+          Junior Software Developer with approximately one year of experience. I
+          have experience in Front-end and Back-end development. I am interested
+          in agile methodologies, object-oriented programming, functional
+          programming, responsive design, UI and UX. I am a graduate of the
+          Escuela Politécnica Nacional (Quito, Ecuador), I like web development
+          and, above all, being constantly learning about new technologies.
         </p>
         <Button color="secondary" id="button_about">
           <a
