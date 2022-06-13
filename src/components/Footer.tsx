@@ -3,7 +3,7 @@ import styles from "@/styles/Home.module.scss";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
-import { Link } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 
 const Footer = () => {
   const socialNetworks = [
@@ -24,6 +24,19 @@ const Footer = () => {
     },
   ];
 
+  function Copyright() {
+    return (
+      <Typography variant="body2" align="center" marginBottom={5}>
+        {"Copyright © "}
+        <Link color="inherit" href="/">
+          Cristian Mañay
+        </Link>{" "}
+        {new Date().getFullYear()}
+        {"."}
+      </Typography>
+    );
+  }
+
   return (
     <>
       <div className={styles.footer}>
@@ -41,6 +54,7 @@ const Footer = () => {
           );
         })}
       </div>
+      <Copyright />
     </>
   );
 };

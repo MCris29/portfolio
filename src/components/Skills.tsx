@@ -667,7 +667,7 @@ const Skills = () => {
     <div
       id="skills"
       className={styles.skills}
-      style={{ backgroundColor: mode == "dark" ? "#353535" : "#EBEBEB" }}
+      style={{ backgroundColor: mode == "light" ? "#EBEBEB" : "#353535" }}
     >
       <div className={styles.title} id="title_skills">
         <h1>My Skills</h1>

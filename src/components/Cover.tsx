@@ -16,12 +16,9 @@ const Cover = () => {
       <video autoPlay muted loop>
         <source src="/cover.mp4" type="video/mp4" />
       </video>
-      <div
-        id="title_cover"
-        style={{ color: mode == "dark" ? "#F8F8FF" : "#2A2A2A" }}
-      >
-        <p className={styles.p_1}>Hi,</p>
-        <p className={styles.p_2}>I am Cristian,</p>
+      <div id="title_cover">
+        <p className={styles.p_1}>Hi, I am</p>
+        <p className={styles.p_2}>Cristian Mañay,</p>
         <p className={styles.p_3}>Software Developer</p>
       </div>
       <CoverAnimation />
