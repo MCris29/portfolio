@@ -1,0 +1,63 @@
+//variables
+$border_radius_button: 15px;
+$shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
+
+.login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    max-width: 40%;
+
+    form {
+      .textField {
+        border-radius: $border_radius_button;
+      }
+      .textField:hover {
+        box-shadow: $shadow;
+      }
+
+      div {
+        border-radius: $border_radius_button;
+      }
+
+      fieldset {
+        border-radius: $border_radius_button;
+      }
+    }
+  }
+}
+
+.button {
+  text-transform: none;
+  border-radius: $border_radius_button;
+  margin: 16px 0 8px;
+}
+
+.button:hover {
+  box-shadow: $shadow;
+}
+
+.error {
+  color: #f44336;
+  padding-left: 15px;
+  position: relative;
+  margin: 10px 0 20px;
+}
+
+.error_2 {
+  color: #f44336;
+  padding-left: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .login {
+    .container {
+      max-width: 80%;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-
+import { AuthProvider } from "@/lib/auth";
 import { useEffect, useMemo, useState } from 'react';
 import {
   createTheme,
@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import '@/styles/globals.css';
 import Navigation from '@/components/Navigation';
-
 import {
   getStoredTheme,
   getThemeOptions,
@@ -31,6 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const theme = useMemo(() => createTheme(getThemeOptions(mode)), [mode]);
 
   return (
+    <AuthProvider>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Navigation
@@ -43,6 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
       <Component {...pageProps} />
     </ThemeProvider>
+    </AuthProvider>
   );
 }
 
