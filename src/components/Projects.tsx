@@ -15,6 +15,15 @@ const Projects = () => {
       logo: "/projects/fuhped_logo1.png",
       background: "linear-gradient(45deg, #855e96, #f44336)",
     },
+    {
+      title: "O2I Organization and Industry Observatory",
+      description: "Development of a platform that generates statistical graphs using data extracted from surveys developed through microservices in Django and React.",
+      tools: "Django, NextJs, ReactJs, MaterialUI.",
+      image: "/projects/o2i_page.png",
+      link: "http://app-o2i.epn.edu.ec/o2i/resultados/",
+      logo: "/projects/o2i_logo.jpg",
+      background: "linear-gradient(45deg, #FFA600, #fafafa)",
+    },
   ];
 
   useEffect(() => {
