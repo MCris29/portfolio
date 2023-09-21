@@ -1,48 +1,49 @@
-import React, { useState } from "react";
-import styles from "@/styles/Home.module.scss";
-import { Link } from "@mui/material";
-import { useTheme } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import styles from '@/styles/Home.module.scss'
+import CloseIcon from '@mui/icons-material/Close'
+import LinkIcon from '@mui/icons-material/Link'
 import {
+  Button,
   Dialog,
   DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
-  useMediaQuery,
+  Link,
   Tooltip,
-} from "@mui/material";
-import LinkIcon from "@mui/icons-material/Link";
-import CloseIcon from "@mui/icons-material/Close";
-import Image from "next/image";
-import Button, { ButtonProps } from "@mui/material/Button";
+  styled,
+  useMediaQuery,
+  useTheme
+} from '@mui/material'
+import { ButtonProps } from '@mui/material/Button'
+import Image from 'next/image'
+import { useState } from 'react'
 
-const CardProject = ({ item }: any) => {
-  const customTheme = useTheme();
+export const CardProject = ({ item }: any) => {
+  const customTheme = useTheme()
 
-  const [open, setOpen] = useState(false);
-  const fullScreen = useMediaQuery(customTheme.breakpoints.down("md"));
+  const [open, setOpen] = useState(false)
+  const fullScreen = useMediaQuery(customTheme.breakpoints.down('md'))
 
   const handleClickOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   const ProjectButton = styled(Button)<ButtonProps>(({ theme }) => ({
     background: item.background,
-    "&:hover": {
-      background: "linear-gradient(225deg, #448AA6, #024059)",
+    '&:hover': {
+      background: 'linear-gradient(225deg, #448AA6, #024059)',
 
       img: {
-        transform: "scale(1.1)",
-        transition: "0.3s",
-        zIndex: "1000",
-      },
-    },
-  }));
+        transform: 'scale(1.1)',
+        transition: '0.3s',
+        zIndex: '1000'
+      }
+    }
+  }))
 
   return (
     <>
@@ -81,7 +82,5 @@ const CardProject = ({ item }: any) => {
         </DialogActions>
       </Dialog>
     </>
-  );
-};
-
-export default CardProject;
+  )
+}

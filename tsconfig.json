@@ -2,12 +2,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["src/components/*"],
-      "@/lib/*": ["src/lib/*"],
-      "@/styles/*": ["src/styles/*"],
-      "@/hocs/*": ["src/hocs/*"],
-      "@/constants/*": ["src/constants/*"],
-      "@/utils/*": ["src/utils/*"]
+      "@/components": ["src/components/index.ts"],
+      "@/context": ["src/context/index.ts"],
+      "@/hooks": ["src/hooks/index.ts"],
+      "@/lib": ["src/lib/index.ts"],
+      "@/styles": ["src/styles/index.ts"],
+      "@/constants": ["src/constants/index.ts"],
+      "@/types": ["src/types/index.ts"],
+      "@/utils": ["src/utils/index.ts"],
     },
 
     "target": "es5",

@@ -1,34 +1,27 @@
-import type { AppProps } from 'next/app';
-
-import { useEffect, useMemo, useState } from 'react';
+import type { AppProps } from 'next/app'
+import { Navigation } from '@/components'
+import '@/styles/globals.css'
 import {
-  createTheme,
+  CssBaseline,
   PaletteMode,
   ThemeProvider,
-  useTheme,
-  CssBaseline,
-} from '@mui/material';
-import '@/styles/globals.css';
-import Navigation from '@/components/Navigation';
-
-import {
-  getStoredTheme,
-  getThemeOptions,
-  setStoredTheme,
-} from '@/utils/theme';
+  createTheme
+} from '@mui/material'
+import { useEffect, useMemo, useState } from 'react'
+import { getStoredTheme, getThemeOptions, setStoredTheme } from '@/utils'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [mode, setMode] = useState<PaletteMode>('dark'); // default is dark mode
+  const [mode, setMode] = useState<PaletteMode>('dark') // default is dark mode
 
   useEffect(() => {
-    const storedTheme = getStoredTheme();
+    const storedTheme = getStoredTheme()
 
     if (storedTheme) {
-      setMode(storedTheme);
+      setMode(storedTheme)
     }
-  }, []);
+  }, [])
 
-  const theme = useMemo(() => createTheme(getThemeOptions(mode)), [mode]);
+  const theme = useMemo(() => createTheme(getThemeOptions(mode)), [mode])
 
   return (
     <ThemeProvider theme={theme}>
@@ -36,14 +29,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Navigation
         mode={mode}
         onChange={() => {
-          const newMode: PaletteMode = mode === 'dark' ? 'light' : 'dark';
-          setMode(newMode);
-          setStoredTheme(newMode);
+          const newMode: PaletteMode = mode === 'dark' ? 'light' : 'dark'
+          setMode(newMode)
+          setStoredTheme(newMode)
         }}
       />
       <Component {...pageProps} />
     </ThemeProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

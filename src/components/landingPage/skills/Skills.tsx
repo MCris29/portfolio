@@ -1,38 +1,37 @@
-import React, { useState, useEffect } from "react";
-import styles from "@/styles/Home.module.scss";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import Tooltip from "@mui/material/Tooltip";
-import { useTheme } from "@mui/material";
-import { getStoredTheme } from "@/utils/theme";
-import SkillsAnimation from "@/components/SkillsAnimation";
+import { SkillsAnimation } from '@/components'
+import styles from '@/styles/Home.module.scss'
+import { getStoredTheme } from '@/utils'
+import { Tooltip, useTheme } from '@mui/material'
+import { useEffect, useState } from 'react'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
-    items: 5,
+    items: 5
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 5,
+    items: 5
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 3,
+    items: 3
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1,
-  },
-};
+    items: 1
+  }
+}
 
-const Skills = () => {
-  const customTheme = useTheme();
+export const Skills = () => {
+  const customTheme = useTheme()
 
   const skills_frontend = [
     {
-      title: "HTML",
+      title: 'HTML',
       logo: (
         <svg
           className={styles.logo}
@@ -61,10 +60,10 @@ const Skills = () => {
             fill="white"
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "CSS",
+      title: 'CSS',
       logo: (
         <svg
           className={styles.logo}
@@ -109,10 +108,10 @@ const Skills = () => {
             fill="white"
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "JavaScript",
+      title: 'JavaScript',
       logo: (
         <svg
           className={styles.logo}
@@ -126,10 +125,10 @@ const Skills = () => {
             fill="#2A2A2A"
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "React",
+      title: 'React',
       logo: (
         <svg
           className={styles.logo}
@@ -169,10 +168,10 @@ const Skills = () => {
             fill="#00D8FF"
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "Vue",
+      title: 'Vue',
       logo: (
         <svg
           className={styles.logo}
@@ -199,10 +198,10 @@ const Skills = () => {
             fill={customTheme.palette.text.primary}
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "Bootstrap",
+      title: 'Bootstrap',
       logo: (
         <svg
           className={styles.logo}
@@ -223,10 +222,10 @@ const Skills = () => {
             fill="white"
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "Material UI",
+      title: 'Material UI',
       logo: (
         <svg
           className={styles.logo}
@@ -251,13 +250,13 @@ const Skills = () => {
             fill="#0081CB"
           />
         </svg>
-      ),
-    },
-  ];
+      )
+    }
+  ]
 
   const skills_backend = [
     {
-      title: "Php MyAdmin",
+      title: 'Php MyAdmin',
       logo: (
         <svg
           className={styles.logo}
@@ -285,10 +284,10 @@ const Skills = () => {
             fill="#F89C0E"
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "My SQL",
+      title: 'My SQL',
       logo: (
         <svg
           className={styles.logo}
@@ -309,10 +308,10 @@ const Skills = () => {
             fill="#CE8B2C"
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "Laravel",
+      title: 'Laravel',
       logo: (
         <svg
           className={styles.logo}
@@ -325,10 +324,10 @@ const Skills = () => {
             fill="#EF533F"
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "CouchDB",
+      title: 'CouchDB',
       logo: (
         <svg
           className={styles.logo}
@@ -349,10 +348,10 @@ const Skills = () => {
             fill="#E42528"
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "MongoDB",
+      title: 'MongoDB',
       logo: (
         <svg
           className={styles.logo}
@@ -405,13 +404,13 @@ const Skills = () => {
             fill={customTheme.palette.text.primary}
           />
         </svg>
-      ),
-    },
-  ];
+      )
+    }
+  ]
 
   const other_skills = [
     {
-      title: "Git",
+      title: 'Git',
       logo: (
         <svg
           className={styles.logo}
@@ -428,10 +427,10 @@ const Skills = () => {
             fill="#F03C2E"
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "GitHub",
+      title: 'GitHub',
       logo: (
         <svg
           className={styles.logo}
@@ -454,10 +453,10 @@ const Skills = () => {
             fill={customTheme.palette.text.primary}
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "Firebase",
+      title: 'Firebase',
       logo: (
         <svg
           className={styles.logo}
@@ -516,10 +515,10 @@ const Skills = () => {
             </clipPath>
           </defs>
         </svg>
-      ),
+      )
     },
     {
-      title: "Postman",
+      title: 'Postman',
       logo: (
         <svg
           className={styles.logo}
@@ -612,10 +611,10 @@ const Skills = () => {
             fill="#FF6C37"
           />
         </svg>
-      ),
+      )
     },
     {
-      title: "Figma",
+      title: 'Figma',
       logo: (
         <svg
           className={styles.logo}
@@ -652,22 +651,22 @@ const Skills = () => {
             fill={customTheme.palette.text.primary}
           />
         </svg>
-      ),
-    },
-  ];
+      )
+    }
+  ]
 
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState('')
 
   useEffect(() => {
-    const storedTheme = getStoredTheme();
-    setMode("" + storedTheme);
-  });
+    const storedTheme = getStoredTheme()
+    setMode('' + storedTheme)
+  })
 
   return (
     <div
       id="skills"
       className={styles.skills}
-      style={{ backgroundColor: mode == "light" ? "#EBEBEB" : "#353535" }}
+      style={{ backgroundColor: mode == 'light' ? '#EBEBEB' : '#353535' }}
     >
       <div className={styles.title} id="title_skills">
         <h1>My Skills</h1>
@@ -688,7 +687,7 @@ const Skills = () => {
                   <div className="skills_frontend">{item.logo}</div>
                 </Tooltip>
               </div>
-            );
+            )
           })}
         </Carousel>
       </div>
@@ -709,7 +708,7 @@ const Skills = () => {
                   <div className="skills_backend">{item.logo}</div>
                 </Tooltip>
               </div>
-            );
+            )
           })}
         </Carousel>
       </div>
@@ -730,14 +729,12 @@ const Skills = () => {
                   <div className="skills_dev_tools">{item.logo}</div>
                 </Tooltip>
               </div>
-            );
+            )
           })}
         </Carousel>
       </div>
       <div className={styles.subtitle}>Other Dev Tools</div>
       <SkillsAnimation />
     </div>
-  );
-};
-
-export default Skills;
+  )
+}

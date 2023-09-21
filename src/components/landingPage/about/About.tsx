@@ -1,19 +1,18 @@
-import react, { useState, useEffect } from "react";
-import styles from "@/styles/Home.module.scss";
-import { useTheme } from "@mui/material";
-import { Button } from "@mui/material";
-import { getStoredTheme } from "@/utils/theme";
-import AboutAnimation from "@/components/AboutAnimation";
+import { AboutAnimation } from '@/components'
+import styles from '@/styles/Home.module.scss'
+import { getStoredTheme } from '@/utils'
+import { Button, useTheme } from '@mui/material'
+import { useEffect, useState } from 'react'
 
-const About = () => {
-  const customTheme = useTheme();
+export const About = () => {
+  const customTheme = useTheme()
 
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState('')
 
   useEffect(() => {
-    const storedTheme = getStoredTheme();
-    setMode("" + storedTheme);
-  });
+    const storedTheme = getStoredTheme()
+    setMode('' + storedTheme)
+  })
 
   return (
     <div className={styles.about} id="about-me">
@@ -24,8 +23,8 @@ const About = () => {
         id="section_2"
         className={styles.section_2}
         style={{
-          backgroundColor: mode == "light" ? "#448AA6" : "#024059",
-          color: customTheme.palette.text.primary,
+          backgroundColor: mode == 'light' ? '#448AA6' : '#024059',
+          color: customTheme.palette.text.primary
         }}
       >
         <p>
@@ -38,7 +37,7 @@ const About = () => {
         </p>
         <Button color="secondary" id="button_about">
           <a
-            href={"/cv.pdf"}
+            href={'/cv.pdf'}
             target="_blank"
             rel="noopener noreferrer"
             download="cv_Cristian_Mañay.pdf"
@@ -49,7 +48,5 @@ const About = () => {
       </div>
       <AboutAnimation />
     </div>
-  );
-};
-
-export default About;
+  )
+}

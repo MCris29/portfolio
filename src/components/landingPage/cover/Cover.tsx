@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import styles from "@/styles/Navigation.module.scss";
-import CoverAnimation from "@/components/CoverAnimation";
-import { getStoredTheme } from "@/utils/theme";
+import { CoverAnimation } from '@/components'
+import styles from '@/styles/Navigation.module.scss'
+import { getStoredTheme } from '@/utils'
+import { useEffect, useState } from 'react'
 
-const Cover = () => {
-  const [mode, setMode] = useState("");
+export const Cover = () => {
+  const [mode, setMode] = useState('')
 
   useEffect(() => {
-    const storedTheme = getStoredTheme();
-    setMode("" + storedTheme);
-  });
+    const storedTheme = getStoredTheme()
+    setMode('' + storedTheme)
+  })
 
   return (
     <div id="cover" className={styles.cover}>
@@ -23,7 +23,5 @@ const Cover = () => {
       </div>
       <CoverAnimation />
     </div>
-  );
-};
-
-export default Cover;
+  )
+}
